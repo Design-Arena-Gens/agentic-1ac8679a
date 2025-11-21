@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 35%, #f6f7fb 100%);
+  color: #081226;
+  min-height: 100vh;
+}
+
+section {
+  scroll-margin-top: 5rem;
+}
+
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-xl rounded-3xl;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700;
+}
+
+.section-heading {
+  @apply text-3xl font-bold tracking-tight text-primary-900 md:text-4xl;
+  font-family: var(--font-heading);
+}
+
+.section-subtitle {
+  @apply mt-3 text-lg text-slate-600 md:text-xl;
+}
+
+.grid-card {
+  @apply glass-panel p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+}
+
+.gradient-bar {
+  background: linear-gradient(90deg, #0f4eb4, #2c8aff, #56b4d3);
+}
+
+.timeline::before {
+  content: "";
+  @apply absolute inset-y-0 right-5 w-px bg-gradient-to-b from-primary-400 via-primary-200 to-transparent;
+}
